@@ -1,4 +1,4 @@
-"""EX02 - Wordle - Terminal version of Wordle."""
+"""EX03 - Wordle - Terminal version of Wordle."""
 
 __author__ = "730622383"
 
@@ -58,5 +58,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
-main()
