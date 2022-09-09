@@ -2,7 +2,7 @@
 
 __author__ = "730622383"
 
-def contains_char(test_word, s_char):
+def contains_char(test_word: str, s_char: str) -> bool:
     """Checks that a character is in the test word."""
     assert len(s_char) == 1
     i: int = 0
@@ -13,7 +13,7 @@ def contains_char(test_word, s_char):
         if i == len(test_word):
             return(False)
 
-def emojified(player_guess, secret_word):
+def emojified(player_guess: str, secret_word: str) -> str:
     """Takes a player guess, and returns the emjoified version, with green white and yellow boxes. Uses contains_char to check for white and yellow."""
     WHITE_BOX: str = "\U00002B1C"
     GREEN_BOX: str = "\U0001F7E9"
@@ -30,14 +30,14 @@ def emojified(player_guess, secret_word):
         j += 1
     return(return_word)
 
-def input_guess(secret_len):
+def input_guess(secret_len: int) -> str:
     """Take input for a guess and returns it."""
     player_guess: str = input(f"Enter a {secret_len} character word:")
     while len(player_guess) != secret_len:
         player_guess = input(f"That wasn't {secret_len} chars! Try again:")
     return(player_guess)
 
-def main():
+def main() -> None:
     """The entrypoint of the program and main game loop."""
     secret_word: str = "codes"
     secret_length: int = len(secret_word)
@@ -52,9 +52,11 @@ def main():
             print(f"You won in {turn}/6 turns!")
             return()
         elif turn == 6:
-            print(f"{turn}/6 - Sorry, try again tomorrow!")
+            print(f"X/6 - Sorry, try again tomorrow!")
             return()
         turn += 1
 
 if __name__ == "__main__":
     main()
+
+main()
