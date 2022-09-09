@@ -44,6 +44,7 @@ def main():
     turn: int = 1
     player_guess: str = ""
     while turn <= 6:
+        # Main body of the program, where it runs through the players 6 turns. Passes out the emojified version, and if the player wins or loses
         print(f"=== {turn}/6 ===")
         player_guess = input_guess(secret_length)
         print(emojified(player_guess, secret_word))
