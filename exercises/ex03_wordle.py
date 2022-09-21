@@ -9,9 +9,9 @@ def contains_char(test_word: str, s_char: str) -> bool:
     i: int = 0
     while i < len(test_word):
         if s_char[0] == test_word[i]:
-            return(True)
+            return (True)
         i += 1
-    return(False)
+    return (False)
 
 
 def emojified(player_guess: str, secret_word: str) -> str:
@@ -24,12 +24,12 @@ def emojified(player_guess: str, secret_word: str) -> str:
     while j < len(secret_word):
         if player_guess[j] == secret_word[j]:
             return_word += GREEN_BOX
-        elif contains_char(secret_word, player_guess[j]) == True:
+        elif contains_char(secret_word, player_guess[j]) is True:
             return_word += YELLOW_BOX
         else:
             return_word += WHITE_BOX
         j += 1
-    return(return_word)
+    return (return_word)
 
 
 def input_guess(secret_len: int) -> str:
@@ -37,21 +37,21 @@ def input_guess(secret_len: int) -> str:
     player_guess: str = input(f"Enter a {secret_len} character word: ")
     while len(player_guess) != secret_len:
         player_guess = input(f"That wasn't {secret_len} chars! Try again: ")
-    return(player_guess)
+    return (player_guess)
 
 
 def main() -> None:
     """The entrypoint of the program and main game loop."""
-    secret_word: str = "codes"
-    secret_length: int = len(secret_word)
+    secret: str = "codes"
+    secret_length: int = len(secret)
     turn: int = 1
     player_guess: str = ""
     while turn <= 6:
         # Main body of the program, where it runs through the players 6 turns. Passes out the emojified version, and if the player wins or loses
-        print(f"=== {turn}/6 ===")
+        print(f"=== Turn {turn}/6 ===")
         player_guess = input_guess(secret_length)
-        print(emojified(player_guess, secret_word))
-        if player_guess == secret_word:
+        print(emojified(player_guess, secret))
+        if player_guess == secret:
             print(f"You won in {turn}/6 turns!")
             return
         turn += 1
