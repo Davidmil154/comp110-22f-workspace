@@ -1,0 +1,52 @@
+def odd_and_even(given: list[int]) -> list[int]:
+    holder: list[int] = []
+    i = 0
+    while i < len(given):
+        if i % 2 == 0 and given[i] % 2 != 0:
+            holder.append(given[i])
+            i += 1
+        else:
+            i += 1
+    return(holder)
+            
+print(odd_and_even([2,9,4,17,9,10,15,13,14,21]))
+print(odd_and_even([1,1,1,0,1]))
+
+def vowels_and_threes(word: str) -> str:
+    holder: str = ""
+    i = 0
+    while i < len(word):
+        if i % 3 == 0 and word[i] == "a" or i % 3 == 0 and word[i] == "e" or i % 3 == 0 and word[i] == "i" or i % 3 == 0 and word[i] == "o" or i % 3 == 0 and word[i] == "u":
+            i += 1
+        elif i % 3 == 0:
+            holder += word[i]
+            i += 1
+        elif word[i] == "a" or word[i] == "e" or word[i] == "i" or word[i] == "o" or word[i] == "u":
+            holder += word[i]
+            i += 1
+        else:
+            i += 1
+    return(holder)
+
+print(vowels_and_threes("aeiou"))
+print(vowels_and_threes("hello world"))
+print(vowels_and_threes("comp110"))
+
+def average_grades(master: dict[str, list[int]]) -> dict[str, float]:
+    returner: dict[str, float] = {}
+    for item in master:
+        grades = master[item]
+        i = 0
+        holder: int = 0
+        while i < len(grades):
+            holder += grades[i]
+            i += 1
+            print(holder)
+        average: float = holder / i
+        print(item)
+        print(type)
+        returner[item] = average
+    return(returner)
+
+averager: dict[str, list[int]] = {'Bill':[75,94,97], 'Annie':[88,93,99]}
+print(average_grades(averager))

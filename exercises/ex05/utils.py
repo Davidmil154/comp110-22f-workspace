@@ -12,14 +12,19 @@ def only_evens(given: list[int]) -> list[int]:
             returner.append(num)
     return returner
 
+
 def concat(first: list[int], second: list[int]) -> list[int]:
     """Returns a new list, containing the first list followed by the second list."""
+    returner: list[int] = []
+    for num in first:
+        returner.append(num)
     for num in second:
-        first.append(num)
-    return first
+        returner.append(num)
+    return returner
+
 
 def sub(givenL: list[int], ind1: int, ind2: int) -> list[int]:
-    """Takes a list and two ints(for indexes), and returns a new list of all the values between the ints"""
+    """Takes a list and two ints(for indexes), and returns a new list of all the values between the ints."""
     returner: list[int] = []
     if ind1 < 0:
         i = 0
