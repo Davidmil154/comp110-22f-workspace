@@ -3,6 +3,7 @@
 
 __author__ = "730622383"
 
+
 def invert(test_dict: dict[str, str]) -> dict[str, str]:
     """Inverts the key value pairs of a dict."""
     returner: dict[str, str] = {}
@@ -14,19 +15,20 @@ def invert(test_dict: dict[str, str]) -> dict[str, str]:
         print(returner)
     return (returner)
 
+
 def count(list: list[str]) -> dict[str, int]:
     """Counts the amount of times a value appears in a list and returns a dict."""
     returner: dict[str, int] = {}
     for item in list:
-        i = 0
         if item in returner:
             returner[item] += 1
         else:
             returner[item] = 1
-    return(returner)
+    return (returner)
+
 
 def favorite_color(given: dict[str, str]) -> str:
-    """Takes in person name and favorite color, returns most frequent favorite color"""
+    """Takes in person name and favorite color, returns most frequent favorite color."""
     color_list: list[str] = []
     counter: dict[str, int] = {}
     for value in given:
